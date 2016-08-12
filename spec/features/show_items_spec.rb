@@ -5,7 +5,7 @@ RSpec.feature "See shop items", type: :feature do
     create(:item, name: '包丁')
     create(:item, name: 'フライパン')
 
-    visit '/items'
+    visit items_path
 
     expect(page).to have_text('包丁')
     expect(page).to have_text('フライパン')

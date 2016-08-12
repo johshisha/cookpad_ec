@@ -4,15 +4,4 @@
   %b Name:
   = @item.name
 %p
-  %b Description:
-  = @item.description
-%p
-  %b Price:
-  = @item.price
-%p
-  %b Image url:
-  = @item.image_url
-
-= link_to 'Edit', edit_item_path(@item)
-\|
-= link_to 'Back', items_path
+  = image_tag(@item.image_url)
