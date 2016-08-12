@@ -29,6 +29,7 @@ RSpec.feature "See shop items", type: :feature do
     tableware.items.create!(name: '大皿')
     visit root_path
     click_on '調理器具'
+    save_and_open_page
     expect(page).to have_text('包丁')
     expect(page).to have_text('フライパン')
     expect(page).not_to have_text('大皿')

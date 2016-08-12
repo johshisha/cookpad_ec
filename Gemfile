@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ckpd_intern', path: 'vendor/ckpd_intern'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -52,3 +53,4 @@ end
 
 gem 'rails-controller-testing'
 
+gem "pry"
