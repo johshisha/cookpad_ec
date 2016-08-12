@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: %i(index) do
-    resources :items, only: %w(index)
+    resources :items, only: %w(index) 
   end
+
+  resources :line_items, only: %i(create)
+  resources :orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
