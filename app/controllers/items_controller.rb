@@ -12,8 +12,14 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def recommended
+    @items = Item.where(recommended: true).all
+    render action: :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
     end
+  end
