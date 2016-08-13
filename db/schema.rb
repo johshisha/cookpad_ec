@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 20160812091550) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "status"
+    t.integer  "status",     default: 0
     t.datetime "ordered_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_foreign_key "line_items", "items"

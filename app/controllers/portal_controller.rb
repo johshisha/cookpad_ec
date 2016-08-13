@@ -1,7 +1,5 @@
 class PortalController < ApplicationController
-
-  # GET /
-  def show 
-    @portals = Category.all
+  def show
+    @categories = Category.all
   end
 end

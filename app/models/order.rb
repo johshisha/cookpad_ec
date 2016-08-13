@@ -8,4 +8,8 @@ class Order < ApplicationRecord
   def checkout!(at)
     update!(status: :checked_out, ordered_at: at)
   end
+
+  def into_cart!(at)
+    update!(status: :cart, ordered_at: at)
+  end
 end
