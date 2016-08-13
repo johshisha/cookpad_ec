@@ -17,7 +17,10 @@ RSpec.describe "Order items via API", type: :request do
       )
       
     expect(response.status).to eq(201)
-    binding.pry
+    #binding.pry
     expect(JSON.parse(response.body)['status']).to eq('checked_out')
+
+    expect(response.location).to eq order_url(Order.last.id)
+
   end
 end

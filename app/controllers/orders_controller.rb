@@ -4,17 +4,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create!.tap do |o|
-      o.status = :checked_out
-      o.save
-    end
+    order = Order.create!
+    order.checkout!(Time.now)
 
     params[:line_items].each do |item|
       order.line_items.create!(item.permit(:item_id, :quantity))
     end
     @orders = Order.find(order.id)
-    binding.pry
-    render :status=> 201, :formats => [:json]
+    render :status=> 201, :location=> order_url(@orders.id), :formats => [:json]
   end
 
   def update

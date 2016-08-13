@@ -1,5 +1,6 @@
-json.extract! @orders, :id, :ordered_at,\
-  :status, :created_at, :updated_at
+json.extract! @orders, :id, :ordered_at
+json.total @orders.total
+json.extract! @orders, :status, :created_at, :updated_at
 #binding.pry
 json.url order_url(@orders)
 json.array(@orders.line_items) do |line_items|
